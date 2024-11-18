@@ -1,0 +1,153 @@
+<html>
+<body>
+<div class="login-container">
+    <div class="login-card">
+      <h2 class="text-center text-primary mb-4">Employee Management System</h2>
+      <p class="text-center mb-5">Please log in to continue</p>
+      
+      <!-- Admin Login Form -->
+      <div class="admin-login-form">
+        <form (ngSubmit)="registerEmployee()">
+          <div class="form-group">
+            <label for="adminUsername">Username</label>
+           
+
+          </div>
+          <div class="form-group">
+            <label for="adminPassword">Password</label>
+           
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Register Employees</button>
+        </form>
+        
+      </div>
+  
+      <!-- Main Login Buttons -->
+      <div class="login-buttons">
+        <button class="btn btn-secondary btn-block" (click)="goToListOfEmployees()">Go To List Of Employees</button>
+      </div>
+    </div>
+  </div>
+
+<style>
+  /* General Styles */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  html, body {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Login Container */
+  .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      background-color: #b3d9ff; /* Sky blue background */
+      padding: 20px; /* Padding to prevent touching edges */
+  }
+  
+  /* Login Card */
+  .login-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      text-align: center;
+      margin-top: 20px; /* Prevent touching the top */
+  }
+  
+  .login-card h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #007bff;
+  }
+  
+  .login-card p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #555;
+  }
+  
+  /* Admin Login Form */
+  .admin-login-form .form-group {
+      margin-bottom: 20px;
+  }
+  
+  .admin-login-form label {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 5px;
+  }
+  
+  .admin-login-form button {
+      font-size: 1.2rem;
+      padding: 12px;
+      margin-top: 20px;
+      border-radius: 5px;
+      width: 100%;
+  }
+  
+  /* Main Login Buttons */
+  .login-buttons {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+  }
+  
+  .login-buttons .btn {
+      font-size: 1.2rem;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      width: 100%;
+  }
+  
+  .btn-primary {
+      background-color: #007bff;
+      color: white;
+      border: none;
+  }
+  
+  .btn-secondary {
+      background-color: #007bff;
+      color: white;
+      border: none;
+  }
+  
+  .btn-light {
+      background-color: #f8f9fa;
+      color: #007bff;
+      border: 1px solid #ddd;
+  }
+  
+  .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary:hover {
+      background-color: #0056b3;
+  }
+  
+  .btn-secondary:hover {
+      background-color: #0056b3;
+  }
+  
+  .btn-light:hover {
+      background-color: #e2e6ea;
+  }
+</style>
+
+</body>
+</html>

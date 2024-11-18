@@ -1,0 +1,61 @@
+<app-navigation-baar></app-navigation-baar>
+
+<div class="row justify-content-center">
+  <div class="col-auto">
+    <div class="input-group">
+      <input type="text" class="form-control search-box" placeholder="Search Employees by Employee ID" [(ngModel)]="searchText" (input)="applyFilter()" />
+      <button class="btn btn-primary search-button" (click)="applyFilter()">Search</button>
+    </div>
+  </div>
+</div>
+
+<br/>
+<div class="table-container">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          
+          
+          
+          <th>Job Title</th>
+          
+          <th>Employment Type</th>
+          <th>Employment Status</th>
+          
+          <th>Country</th>
+          <th>View Details</th>
+          
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of filteredEmployees">
+          <td>{{ employee.employeeId }}</td>
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          
+          
+          
+          <td>{{ employee.jobTitle }}</td>
+          
+          <td>{{ employee.employementType }}</td>
+          <td>{{ employee.employementStatus }}</td>
+          
+          <td>{{ employee.country }}</td>
+          <td>
+            <button 
+              (click)="view(employee.employeeId)" 
+              class="btn btn-dark navy-blue-btn">
+              View
+            </button>
+          </td>
+          
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,70 @@
+<app-navigation-baar></app-navigation-baar>
+<div class="add-employees-form">
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    
+    <label for="firstName">First Name:</label>
+    <input id="firstName" type="text" formControlName="firstName" />
+
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" type="text" formControlName="lastName" />
+
+    <label for="dateofBirth">Date Of Birth:</label>
+    <input id="dateofBirth" type="date" formControlName="dateofBirth" />
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input id="phoneNumber" type="tel" formControlName="phoneNumber" />
+
+    <label for="jobTitle">Job Title:</label>
+    <input id="jobTitle" type="text" formControlName="jobTitle" />
+
+    <label for="dateofJoining">Date Of Joining:</label>
+    <input id="dateofJoining" type="date" formControlName="dateofJoining" />
+
+    <label for="employementType">Employement Type:</label>
+    <select id="employementType" formControlName="employementType" required>
+      <option value="Part_Time">Part-Time</option>
+      <option value="Full_Time">Full-Time</option>
+      <option value="Contractual">Contractual</option>
+    </select>
+
+    <label for="employementStatus">Employement Status:</label>
+    <select id="employementStatus" formControlName="employementStatus" required>
+      <option value="Non_active">Non-active</option>
+      <option value="Active">Active</option>
+    </select>
+   
+
+
+    <label for="photo">Photo:</label>
+    <input id="photo" type="file" (change)="onFileChange($event, 'photo')" />
+
+    <label for="identityProof">Identity Proof:</label>
+    <input id="identityProof" type="file" (change)="onFileChange($event, 'identityProof')" />
+
+    <label for="location">Location:</label>
+    <input id="location" type="text" formControlName="location" />
+
+    <label for="country">Country:</label>
+    <select id="country" formControlName="country" required>
+      <option value="India">India</option>
+      <option value="Saudi_Arabia">Saudi Arabia</option>
+      <option value="United_Arab_Emirates">United Arab Emirates</option>
+      <option value="Egypt">Egypt</option>
+      <option value="Palestine">Palestine</option>
+      <option value="America">America</option>
+      <option value="Canada">Canada</option>
+      <option value="Africa">Africa</option>
+      <option value="Iran">Iran</option>
+      <option value="Iraq">Iraq</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+</div>

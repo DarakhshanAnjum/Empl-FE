@@ -1,0 +1,40 @@
+<app-navigation-baar></app-navigation-baar>
+
+<!-- Go Back Button -->
+<button (click)="goBack()" class="go-back-button">← Go Back</button>
+<br />
+<div *ngIf="employee" class="employee-detail-container">
+  <h2>Employee Details</h2>
+  
+  <p><strong>Employee ID:</strong> {{ employee.employeeId }}</p>
+  <p><strong>First Name:</strong> {{ employee.firstName }}</p>
+  <p><strong>Last Name:</strong> {{ employee.lastName }}</p>
+  <p><strong>Date of Birth:</strong> {{ employee.dateofBirth }}</p>
+  <p><strong>Email:</strong> {{ employee.email }}</p>
+  <p><strong>Phone Number:</strong> {{ employee.phoneNumber }}</p>
+  <p><strong>Job Title:</strong> {{ employee.jobTitle }}</p>
+  <p><strong>Date of Joining:</strong> {{ employee.dateofJoining }}</p>
+  <p><strong>Employment Type:</strong> {{ employee.employementType }}</p>
+  <p><strong>Employment Status:</strong> {{ employee.employementStatus }}</p>
+  <p><strong>Location:</strong> {{ employee.location }}</p>
+  <p><strong>Country:</strong> {{ employee.country }}</p>
+
+  <!-- Display images using URLs created from File objects -->
+  <div class="employee-photo-frame">
+    <img *ngIf="employee.photo" [src]="'data:image/jpeg;base64,' + employee.photo" alt="Employee Photo" />
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <button (click)="openDialog(employee.employeeId)" class="edit-button">Edit</button>
+    <div class="download-buttons">
+      <button (click)="downloadPhoto()" class="download-button">Download Photo</button>
+      <button (click)="downloadIdentityproof()" class="download-button">Download Identityproof</button>
+    </div>
+  </div>
+</div>
+
+<!-- Error message if employee details are not found -->
+<div *ngIf="!employee">
+  <p>No employee details found for the given ID.</p>
+</div>
